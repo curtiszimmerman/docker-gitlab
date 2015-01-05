@@ -33,7 +33,14 @@ production: &base
     # Uncomment and customize if you can't use the default user to run GitLab (default: 'git')
     # user: git
 
+    ## Date & Time settings
+    # Uncomment and customize if you want to change the default time zone of GitLab application.
+    # To see all available zones, run `bundle exec rake time:zones:all RAILS_ENV=production`
+    time_zone: "{{GITLAB_TIMEZONE}}"
+
     ## Email settings
+    # Uncomment and set to false if you need to disable email sending from GitLab (default: true)
+    email_enabled: {{GITLAB_EMAIL_ENABLED}}
     # Email address used in the "From" field in mails sent by GitLab
     email_from: "{{GITLAB_EMAIL}}"
 
@@ -280,11 +287,11 @@ production: &base
 
   extra:
     ## Google analytics. Uncomment if you want it
-    # google_analytics_id: '_your_tracking_id'
+    google_analytics_id: '{{GOOGLE_ANALYTICS_ID}}'
 
     ## Piwik analytics.
-    # piwik_url: '_your_piwik_url'
-    # piwik_site_id: '_your_piwik_site_id'
+    piwik_url: '{{PIWIK_URL}}'
+    piwik_site_id: '{{PIWIK_SITE_ID}}'
 
     ## Text under sign-in page (Markdown enabled)
     # sign_in_text: |
